@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="lg:col-span-4">
           <a href="#home" className="flex items-center gap-2.5 mb-6 group" id="footer-logo">
             <SafeImage
-              src="images/ceetec_logo_1782626643746.jpg"
+              src="ceetec_logo.png"
               alt="CEETEC Logo"
               fallbackType="logo"
               className="w-11 h-11 rounded-full object-cover border border-white/10 group-hover:border-brand-orange/30 transition-all duration-300 shadow-sm"
