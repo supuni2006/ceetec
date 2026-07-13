@@ -1,0 +1,6 @@
+{
+  "name": "ceetec",
+  "description": "Educational Training Center (ceetec) - Professional courses, certified teachers, and hands-on skills training.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
