@@ -30,9 +30,14 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
   }, []);
 
   return (
-    <header className="w-full z-50 transition-all duration-300">
-      {/* Top Contact Bar */}
-      <div id="top-bar" className="bg-brand-blue text-white/90 text-xs py-2 px-4 md:px-8 flex flex-col sm:flex-row justify-between items-center border-b border-white/10 gap-2">
+    <header className="w-full sticky top-0 z-50 transition-all duration-300">
+      {/* Top Contact Bar (collapses smoothly when scrolled, keeping nav always pinned) */}
+      <div
+        id="top-bar"
+        className={`bg-brand-blue text-white/90 text-xs px-4 md:px-8 flex flex-col sm:flex-row justify-between items-center border-b border-white/10 gap-2 overflow-hidden transition-all duration-300 ${
+          isScrolled ? 'max-h-0 py-0 opacity-0 pointer-events-none' : 'max-h-20 py-2 opacity-100'
+        }`}
+      >
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
           <div className="flex items-center gap-1.5" id="topbar-phone">
             <Phone className="w-3.5 h-3.5 text-brand-gold" />
@@ -69,19 +74,19 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
+      {/* Main Navigation Bar (always visible — header itself is now sticky) */}
       <nav
         id="main-nav"
         className={`w-full transition-all duration-300 py-4 px-4 md:px-8 flex justify-between items-center ${
           isScrolled
-            ? 'sticky top-0 bg-white shadow-md border-b border-gray-100 backdrop-blur-md'
+            ? 'bg-white shadow-md border-b border-gray-100 backdrop-blur-md'
             : 'bg-white/95 md:bg-white'
         }`}
       >
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2.5 group" id="nav-logo">
           <SafeImage
-            src="images/ceetec_logo_1782626643746.jpg"
+            src="ceetec_logo.png"
             alt="CEETEC Logo"
             fallbackType="logo"
             className="w-11 h-11 rounded-full object-cover border border-slate-100 group-hover:border-brand-orange/30 transition-all duration-300 shadow-sm"
@@ -155,7 +160,7 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
             <div className="flex justify-between items-center mb-8 border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2.5">
                 <SafeImage
-                  src="images/ceetec_logo_1782626643746.jpg"
+                  src="ceetec_logo.png"
                   alt="CEETEC Logo"
                   fallbackType="logo"
                   className="w-9 h-9 rounded-full object-cover border border-slate-100 shadow-sm"
