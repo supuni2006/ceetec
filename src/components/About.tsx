@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle, ShieldCheck, Trophy, Sparkles } from 'lucide-react';
-import SafeImage from './SafeImage';
+import SafeImage from '../components/SafeImage';
 
 export default function About() {
   const [activeTab, setActiveTab] = useState<'mission' | 'vision' | 'values'>('mission');

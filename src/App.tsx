@@ -1,121 +1,91 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import About from './components/About';
-import Courses from './components/Courses';
-import Tutors from './components/Tutors';
-import Testimonials from './components/Testimonials';
-import FAQSection from './components/FAQSection';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
-import EnquiryModal from './components/EnquiryModal';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import FeaturesPage from "./pages/FeaturesPage";
+import FacilitiesPage from "./pages/FacilitiesPage";
+import CoursesPage from "./pages/CoursesPage";
+import TutorsPage from "./pages/TutorsPage";
+import TestimonialsPage from "./pages/TestimonialsPage";
+import FAQPage from "./pages/FAQPage";
+import ContactPage from "./pages/ContactPage";
+
 
 export default function App() {
-  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
-  const [prefilledSubject, setPrefilledSubject] = useState<string>('General Guidance');
-  const [activeSection, setActiveSection] = useState<string>('home');
 
-  // Trigger Enquiry desk modal from any child component
-  const handleOpenEnquiry = (subject: string = 'General Guidance') => {
-    setPrefilledSubject(subject);
-    setIsEnquiryOpen(true);
+  const handleOpenEnquiry = () => {
+    console.log("Open Enquiry Form");
   };
-
-  // Fast scroll callback from Hero to Courses
-  const handleDiscoverCourses = () => {
-    const coursesSection = document.getElementById('courses');
-    if (coursesSection) {
-      coursesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Scroll active state listener (IntersectionObserver for modern scrolling updates)
-  useEffect(() => {
-    const sections = ['home', 'about', 'features', 'courses', 'facilities', 'faq', 'contact'];
-    
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -60% 0px', // Target middle of the view
-      threshold: 0,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach((secId) => {
-      const el = document.getElementById(secId);
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      sections.forEach((secId) => {
-        const el = document.getElementById(secId);
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, []);
 
   return (
-    <div className="w-full relative min-h-screen flex flex-col justify-between selection:bg-brand-orange selection:text-white" id="ceetec-app-root">
-      
-      {/* Sticky top headers */}
+    <BrowserRouter>
+
       <Navbar
-        onOpenEnquiry={() => handleOpenEnquiry('General Guidance')}
-        activeSection={activeSection}
+        onOpenEnquiry={handleOpenEnquiry}
       />
 
-      {/* Main Sections */}
-      <main className="flex-grow">
-        
-        {/* Hero Banner Section */}
-        <Hero
-          onDiscoverCourses={handleDiscoverCourses}
-          onOpenEnquiry={() => handleOpenEnquiry('Free Academic Counseling')}
-        />
+      <main>
+        <Routes>
 
-        {/* Benefits and Trust Badges */}
-        <Features />
+          <Route 
+            path="/" 
+            element={<Home />} 
+          />
 
-        {/* Dynamic narrative and counters */}
-        <About />
+          <Route 
+            path="/about" 
+            element={<AboutPage />} 
+          />
 
-        {/* Interactive courses database */}
-        <Courses
-          onOpenEnquiry={(courseTitle) => handleOpenEnquiry(courseTitle || 'Course Booking')}
-        />
+          <Route 
+            path="/features" 
+            element={<FeaturesPage />} 
+          />
 
-        {/* Expert tutors profiles */}
-        <Tutors />
+          <Route 
+            path="/facilities" 
+            element={<FacilitiesPage />} 
+          />
 
-        {/* High visual quote review sliders */}
-        <Testimonials />
+          <Route 
+            path="/courses" 
+            element={<CoursesPage />} 
+          />
 
-        {/* Accordions FAQs */}
-        <FAQSection />
+          <Route 
+            path="/tutors" 
+            element={<TutorsPage />} 
+          />
 
-        {/* Feedback form desk */}
-        <ContactForm />
+          <Route 
+            path="/testimonials" 
+            element={<TestimonialsPage />} 
+          />
 
+          <Route 
+            path="/faq" 
+            element={<FAQPage />} 
+          />
+
+          <Route 
+            path="/contact" 
+            element={<ContactPage />} 
+          />
+
+          {/* Fallback */}
+          <Route 
+            path="*" 
+            element={<Home />} 
+          />
+
+        </Routes>
       </main>
 
-      {/* Corporate compliant Footers */}
       <Footer />
 
-      {/* Centralised callback scheduling modal */}
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        prefilledSubject={prefilledSubject}
-      />
-
-    </div>
+    </BrowserRouter>
   );
 }
