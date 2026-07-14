@@ -58,7 +58,7 @@ export default function SafeImage({ src, alt, fallbackType, className = '', ...p
       const initials = getInitials(alt);
 
       return (
-        <svg viewBox="0 0 100 100" className={`shrink-0 rounded-full border border-slate-100/10 ${className}`} {...props}>
+        <svg viewBox="0 0 100 100" className={`shrink-0 rounded-full border border-slate-100/10 ${className}`} {...(props as unknown as React.SVGProps<SVGSVGElement>)}>
           <defs>
             <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#0e2246" />
@@ -85,7 +85,7 @@ export default function SafeImage({ src, alt, fallbackType, className = '', ...p
 
     if (fallbackType === 'course-tech') {
       return (
-        <svg viewBox="0 0 400 300" className={`${className}`} {...props}>
+        <svg viewBox="0 0 400 300" className={`${className}`} {...(props as unknown as React.SVGProps<SVGSVGElement>)}>
           <defs>
             <linearGradient id="techGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#0e2246" />
@@ -123,7 +123,7 @@ export default function SafeImage({ src, alt, fallbackType, className = '', ...p
 
     if (fallbackType === 'course-business') {
       return (
-        <svg viewBox="0 0 400 300" className={`${className}`} {...props}>
+        <svg viewBox="0 0 400 300" className={`${className}`} {...(props as unknown as React.SVGProps<SVGSVGElement>)}>
           <defs>
             <linearGradient id="bizGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#0e2246" />
@@ -170,7 +170,7 @@ export default function SafeImage({ src, alt, fallbackType, className = '', ...p
 
     if (fallbackType === 'course-languages') {
       return (
-        <svg viewBox="0 0 400 300" className={`${className}`} {...props}>
+        <svg viewBox="0 0 400 300" className={`${className}`} {...(props as unknown as React.SVGProps<SVGSVGElement>)}>
           <defs>
             <linearGradient id="langGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#0e2246" />
@@ -202,7 +202,7 @@ export default function SafeImage({ src, alt, fallbackType, className = '', ...p
 
     // Default or 'hero' fallback
     return (
-      <svg viewBox="0 0 1200 600" className={`${className}`} {...props} style={{ minHeight: '100%', width: '100%' }}>
+      <svg viewBox="0 0 1200 600" className={`${className}`} {...(props as unknown as React.SVGProps<SVGSVGElement>)} style={{ minHeight: '100%', width: '100%' }}>
         <defs>
           <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#0e2246" />
