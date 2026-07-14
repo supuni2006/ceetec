@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { GraduationCap, ArrowUp, Send, CheckCircle } from 'lucide-react';
 import SafeImage from './SafeImage';
 
@@ -29,13 +30,17 @@ export default function Footer() {
         
         {/* Brand Block */}
         <div className="lg:col-span-4">
-          <a href="#home" className="flex items-center gap-2.5 mb-6 group" id="footer-logo">
+          <Link to="/" className="flex items-center gap-2.5 mb-6 group" id="footer-logo">
             <SafeImage
-              src="ceetec_logo.png"
-              alt="CEETEC Logo"
-              fallbackType="logo"
-              className="w-11 h-11 rounded-full object-cover border border-white/10 group-hover:border-brand-orange/30 transition-all duration-300 shadow-sm"
-            />
+                src="/images/ceetec_logo.png"
+                alt="CEETEC University Logo"
+                fallbackType="logo"
+                className="
+                  w-12
+                  h-12
+                  object-contain
+                "
+              />
             <div className="flex flex-col">
               <span className="font-display font-bold text-2xl tracking-tight text-white leading-none uppercase">
                 CEETEC
@@ -44,7 +49,7 @@ export default function Footer() {
                 University
               </span>
             </div>
-          </a>
+          </Link>
           <p className="text-xs text-slate-400 leading-relaxed font-light mb-6 max-w-sm">
             ceetec is a leading modern university dedicated to empowering and launching students into the competitive global market. We provide high-fidelity, globally recognized professional programs, academic qualifications, and industry-compliant certifications in advanced technologies, executive management, and modern language studies.
           </p>
@@ -99,22 +104,22 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3.5 text-xs">
             <li>
-              <a href="#home" className="hover:text-brand-orange transition-colors">Home Page</a>
+              <Link to="/" className="hover:text-brand-orange transition-colors">Home Page</Link>
             </li>
             <li>
-              <a href="#about" className="hover:text-brand-orange transition-colors">About Us</a>
+              <Link to="/about" className="hover:text-brand-orange transition-colors">About Us</Link>
             </li>
             <li>
-              <a href="#features" className="hover:text-brand-orange transition-colors">Why Choose Us</a>
+              <Link to="/features" className="hover:text-brand-orange transition-colors">Why Choose Us</Link>
             </li>
             <li>
-              <a href="#courses" className="hover:text-brand-orange transition-colors">Our Courses</a>
+              <Link to="/courses" className="hover:text-brand-orange transition-colors">Our Courses</Link>
             </li>
             <li>
-              <a href="#facilities" className="hover:text-brand-orange transition-colors">Academic Facilities</a>
+              <Link to="/facilities" className="hover:text-brand-orange transition-colors">Academic Facilities</Link>
             </li>
             <li>
-              <a href="#faq" className="hover:text-brand-orange transition-colors">FAQ & Support</a>
+              <Link to="/faq" className="hover:text-brand-orange transition-colors">FAQ & Support</Link>
             </li>
           </ul>
         </div>
