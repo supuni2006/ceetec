@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -14,6 +14,20 @@ import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
 
 
+function SiteNavbar({ onOpenEnquiry }: { onOpenEnquiry: () => void }) {
+  const location = useLocation();
+  const activeSection = location.pathname === "/"
+    ? "home"
+    : location.pathname.replace(/^\//, "").split("/")[0];
+
+  return (
+    <Navbar
+      onOpenEnquiry={onOpenEnquiry}
+      activeSection={activeSection}
+    />
+  );
+}
+
 export default function App() {
 
   const handleOpenEnquiry = () => {
@@ -23,7 +37,7 @@ export default function App() {
   return (
     <BrowserRouter>
 
-      <Navbar
+      <SiteNavbar
         onOpenEnquiry={handleOpenEnquiry}
       />
 
