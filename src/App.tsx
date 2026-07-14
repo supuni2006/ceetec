@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import EnquiryModal from "./components/EnquiryModal";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
@@ -36,19 +42,11 @@ function SiteNavbar({
 }
 
 export default function App() {
-  // Modal State
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
-
-  // Optional: prefill subject if needed later
   const [selectedSubject, setSelectedSubject] = useState("");
 
   const handleOpenEnquiry = (subject?: string) => {
-    if (subject) {
-      setSelectedSubject(subject);
-    } else {
-      setSelectedSubject("");
-    }
-
+    setSelectedSubject(subject || "");
     setIsEnquiryOpen(true);
   };
 
@@ -58,21 +56,26 @@ export default function App() {
 
   return (
     <BrowserRouter>
+
+      {/* Scroll to top whenever page changes */}
+      <ScrollToTop />
+
       <SiteNavbar
         onOpenEnquiry={() => handleOpenEnquiry()}
       />
 
       <main>
         <Routes>
+
           <Route path="/" element={<Home />} />
 
           <Route path="/about" element={<AboutPage />} />
 
           <Route path="/features" element={<FeaturesPage />} />
 
-          <Route path="/facilities" element={<FacilitiesPage />} />
-
           <Route path="/courses" element={<CoursesPage />} />
+
+          <Route path="/facilities" element={<FacilitiesPage />} />
 
           <Route path="/tutors" element={<TutorsPage />} />
 
@@ -86,6 +89,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
 
           <Route path="*" element={<Home />} />
+
         </Routes>
       </main>
 
@@ -96,6 +100,7 @@ export default function App() {
         onClose={handleCloseEnquiry}
         prefilledSubject={selectedSubject}
       />
+
     </BrowserRouter>
   );
 }
