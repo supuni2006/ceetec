@@ -232,15 +232,11 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
           </div>
 
           <div className="border-t border-slate-100 pt-6">
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                onOpenEnquiry();
-              }}
-              className="w-full bg-brand-blue hover:bg-brand-orange text-white text-center font-semibold py-3 rounded-lg transition-all duration-300 flex justify-center items-center gap-2"
-            >
-              <span>Quick Enquiry</span>
-              <ArrowRight className="w-4 h-4" />
+                <button
+      onClick={onOpenEnquiry}
+      className="bg-brand-blue hover:bg-brand-orange text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm flex items-center gap-2"
+    >
+      Quick Enquiry
             </button>
             <div className="mt-4 text-center text-xs text-gray-400 font-mono">
               info@ceetec.lk
