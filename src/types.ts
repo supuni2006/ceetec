@@ -3,6 +3,8 @@ export interface Course {
   title: string;
   category: 'technology' | 'business' | 'languages' | 'design';
   categoryLabel: string;
+  /** Optional extra categories this course should also match under (in addition to `category`). */
+  categories?: Array<'technology' | 'business' | 'languages' | 'design'>;
   price: number | string;
   rating: number;
   reviewCount: number;

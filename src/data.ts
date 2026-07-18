@@ -337,6 +337,36 @@ export const COURSES: Course[] = [
       'Phase 3: System Security & File Sharing - Set up Firewalls, VPNs, LDAP authentication, FTP, NFS, and Samba'
     ],
     badges: ['linux-essentials', 'lpic']
+  },
+  {
+    id: 'biz-1',
+    title: 'AI-Powered Digital Marketing Masterclass',
+    category: 'business',
+    categoryLabel: 'Digital Marketing',
+    categories: ['business', 'design'],
+    price: '',
+    rating: 4.9,
+    reviewCount: 76,
+    image: 'images/digital.jpg',
+    tutor: {
+      name: 'Ms. Dilani Fernando',
+      avatar: '',
+      role: 'Digital Marketing & Brand Strategist'
+    },
+    durationHours: 40,
+    durationWeeks: 8,
+    level: 'All Levels',
+    description: 'Learn. Create. Grow — with AI-powered skills. Master the future of digital marketing by combining core marketing strategy with hands-on AI tools for content, video, and design, so you can plan, produce, and publish scroll-stopping campaigns faster and smarter.',
+    curriculum: [
+      'Digital Marketing Foundations & Strategy',
+      'AI Post Design - creating eye-catching social media posts with AI tools',
+      'AI Video Creation - generating engaging videos faster with AI',
+      'Script Writing - writing powerful scripts that connect and convert',
+      'Video Editing - editing like a pro and producing standout content',
+      'Content Creation - planning, creating, and publishing brand-building content',
+      'Social Media Campaign Planning & Analytics',
+      'Capstone: Launching an AI-Assisted Marketing Campaign'
+    ]
   }
 ];
 

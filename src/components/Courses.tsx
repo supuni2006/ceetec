@@ -36,7 +36,10 @@ export default function Courses({ onOpenEnquiry }: CoursesProps) {
 
   // Filters logic
   const filteredCourses = COURSES.filter((course) => {
-    const matchesCategory = selectedCategory === 'all' || course.category === selectedCategory;
+    const matchesCategory =
+      selectedCategory === 'all' ||
+      course.category === selectedCategory ||
+      (course.categories ? course.categories.includes(selectedCategory as any) : false);
     const matchesLevel = selectedLevel === 'all' || course.level === selectedLevel;
     const matchesSearch =
       course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
