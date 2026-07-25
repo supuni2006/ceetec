@@ -18,6 +18,7 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
     { label: 'Features', href: '/features', id: 'features' },
     { label: 'Courses', href: '/courses', id: 'courses' },
     { label: 'Facilities', href: '/facilities', id: 'facilities' },
+    { label: 'Gallery', href: '/gallery', id: 'gallery' },
     { label: 'FAQ', href: '/faq', id: 'faq' },
     { label: 'Contact', href: '/contact', id: 'contact' },
   ];

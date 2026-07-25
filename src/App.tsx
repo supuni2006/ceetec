@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import FeaturesPage from "./pages/FeaturesPage";
 import FacilitiesPage from "./pages/FacilitiesPage";
+import GalleryPage from "./pages/GalleryPage";
 import CoursesPage from "./pages/CoursesPage";
 import TutorsPage from "./pages/TutorsPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
@@ -76,6 +77,8 @@ export default function App() {
           <Route path="/courses" element={<CoursesPage />} />
 
           <Route path="/facilities" element={<FacilitiesPage />} />
+
+          <Route path="/gallery" element={<GalleryPage />} />
 
           <Route path="/tutors" element={<TutorsPage />} />
 
