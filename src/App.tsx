@@ -68,13 +68,13 @@ export default function App() {
       <main>
         <Routes>
 
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home onOpenEnquiry={handleOpenEnquiry} />} />
 
           <Route path="/about" element={<AboutPage />} />
 
           <Route path="/features" element={<FeaturesPage />} />
 
-          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/courses" element={<CoursesPage onOpenEnquiry={handleOpenEnquiry} />} />
 
           <Route path="/facilities" element={<FacilitiesPage />} />
 
@@ -91,7 +91,7 @@ export default function App() {
 
           <Route path="/contact" element={<ContactPage />} />
 
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Home onOpenEnquiry={handleOpenEnquiry} />} />
 
         </Routes>
       </main>

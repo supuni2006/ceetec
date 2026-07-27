@@ -1,12 +1,11 @@
 import Courses from "../components/Courses";
 
-export default function CoursesPage() {
+interface CoursesPageProps {
+  onOpenEnquiry: (course?: string) => void;
+}
 
-  const handleOpenEnquiry = (course?: string) => {
-    console.log(course);
-  };
-
+export default function CoursesPage({ onOpenEnquiry }: CoursesPageProps) {
   return (
-    <Courses onOpenEnquiry={handleOpenEnquiry} />
+    <Courses onOpenEnquiry={onOpenEnquiry} />
   );
 }

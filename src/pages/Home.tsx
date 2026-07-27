@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
@@ -7,24 +8,22 @@ import Testimonials from "../components/Testimonials";
 import FAQSection from "../components/FAQSection";
 import ContactForm from "../components/ContactForm";
 
+interface HomeProps {
+  onOpenEnquiry: (course?: string) => void;
+}
 
-export default function Home() {
+export default function Home({ onOpenEnquiry }: HomeProps) {
+  const navigate = useNavigate();
 
   const handleDiscoverCourses = () => {
-    window.location.href = "/courses";
+    navigate("/courses");
   };
-
-
-  const handleOpenEnquiry = (course?: string) => {
-    console.log(course);
-  };
-
 
   return (
     <>
       <Hero
         onDiscoverCourses={handleDiscoverCourses}
-        onOpenEnquiry={handleOpenEnquiry}
+        onOpenEnquiry={() => onOpenEnquiry()}
       />
 
       <About />
@@ -32,7 +31,7 @@ export default function Home() {
       <Features />
 
       <Courses
-        onOpenEnquiry={handleOpenEnquiry}
+        onOpenEnquiry={onOpenEnquiry}
       />
 
       <Tutors />
