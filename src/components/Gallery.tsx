@@ -43,6 +43,10 @@ const ALBUMS: AlbumBox[] = [
       { id: 'cs-3', title: 'Classroom Session', image: 'images/class3.jpeg' },
       { id: 'cs-4', title: 'Classroom Session', image: 'images/class4.jpg' },
       { id: 'cs-5', title: 'Classroom Session', image: 'images/class5.jpg' },
+      { id: 'cs-6', title: 'Classroom Session', image: 'images/class6.jpg' },
+      { id: 'cs-7', title: 'Classroom Session', image: 'images/class7.jpg' },
+      { id: 'cs-8', title: 'Classroom Session', image: 'images/class8.jpg' },
+      { id: 'cs-9', title: 'Classroom Session', image: 'images/class9.jpg' },
     ],
   },
   {
@@ -72,12 +76,18 @@ const ALBUMS: AlbumBox[] = [
   },
   {
     id: 'workshops',
-    title: 'Workshops',
-    description: 'Container & orchestration workshops',
+    title: 'Workshops & Seminars',
+    description: 'Hands-on workshops and guest seminars',
     items: [
       { id: 'w-1', title: 'Container Specialist Workshop', image: 'images/container_specialist_banner_1782647403137.jpg' },
       { id: 'w-2', title: 'Containerization & Orchestration', image: 'images/containerization_orchestration_banner_1782647052659.jpg' },
       { id: 'w-3', title: 'DCA / KCNA / CKA Workshop', image: 'images/dca_kcna_cka_banner_1782648528926.jpg' },
+      { id: 'w-4', title: 'Guest Seminar', image: 'images/seminar1.jpg' },
+      { id: 'w-5', title: 'Guest Seminar', image: 'images/seminar2.jpg' },
+      { id: 'w-6', title: 'Guest Seminar', image: 'images/seminar3.jpg' },
+      { id: 'co-5', title: 'Linux Administration', image: 'images/linux_admin_banner_1782801937407.jpg' },
+      { id: 'co-6', title: 'M365 Specialist', image: 'images/m365_specialist_banner_1782800511070.jpg' },
+      { id: 'co-7', title: 'Solar PV Systems', image: 'images/solar_pv_banner_1782799423837.jpg' },
     ],
   },
   {
