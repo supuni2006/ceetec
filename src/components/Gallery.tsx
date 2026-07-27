@@ -1,116 +1,123 @@
 import React, { useState } from 'react';
-import { Images, Eye, X, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Images, Eye, X, ChevronRight, ChevronLeft, ArrowLeft, FolderOpen } from 'lucide-react';
 import SafeImage from './SafeImage';
 
 interface GalleryItem {
   id: string;
   title: string;
   image: string;
-  category: 'campus' | 'labs' | 'courses' | 'events';
 }
 
-const GALLERY_ITEMS: GalleryItem[] = [
+interface AlbumBox {
+  id: string;
+  title: string;
+  description: string;
+  items: GalleryItem[];
+}
+
+const ALBUMS: AlbumBox[] = [
   {
-    id: 'g-1',
-    title: 'Executive Lecture Hall',
-    category: 'campus',
-    image: 'images/tutor_lecture_hall.jpg',
+    id: 'campus-labs',
+    title: 'Campus & Labs',
+    description: 'Lecture halls, lounges & sandbox labs',
+    items: [
+      { id: 'cl-1', title: 'Executive Lecture Hall', image: 'images/tutor_lecture_hall.jpg' },
+      { id: 'cl-2', title: 'Student Collaboration Lounge', image: 'images/tutor_collab_lounge.jpg' },
+      { id: 'cl-3', title: 'Academic Counseling Desk', image: 'images/tutor_counseling_desk.jpg' },
+      { id: 'cl-4', title: 'Executive Boardroom', image: 'images/tutor_boardroom.jpg' },
+      { id: 'cl-5', title: 'Cloud & AI Sandbox Lab', image: 'images/tutor_sandbox_lab.jpg' },
+      { id: 'cl-6', title: 'Certified Exam Testing Sandbox', image: 'images/tutor_exam_testing.jpg' },
+      { id: 'cl-7', title: 'Campus Overview', image: 'images/ceetec_about_banner_1782795055106.jpg' },
+      { id: 'cl-8', title: 'CEETEC University', image: 'images/ceetec_hero_banner_1782582678938.jpg' },
+      { id: 'cl-9', title: 'Students Collaborating', image: 'images/about_students_collaborating.jpg' },
+      { id: 'cl-10', title: 'Digital Campus Life', image: 'images/digital.jpg' },
+    ],
   },
   {
-    id: 'g-2',
-    title: 'Cloud & AI Sandbox Lab',
-    category: 'labs',
-    image: 'images/tutor_sandbox_lab.jpg',
+    id: 'classes',
+    title: 'Classes',
+    description: 'Inside our classrooms in session',
+    items: [
+      { id: 'cs-1', title: 'Classroom Session', image: 'images/class1.jpeg' },
+      { id: 'cs-2', title: 'Classroom Session', image: 'images/class2.jpeg' },
+      { id: 'cs-3', title: 'Classroom Session', image: 'images/class3.jpeg' },
+      { id: 'cs-4', title: 'Classroom Session', image: 'images/class4.jpg' },
+      { id: 'cs-5', title: 'Classroom Session', image: 'images/class5.jpg' },
+    ],
   },
   {
-    id: 'g-3',
-    title: 'Student Collaboration Lounge',
-    category: 'campus',
-    image: 'images/tutor_collab_lounge.jpg',
+    id: 'courses',
+    title: 'Courses',
+    description: 'Business, tech & language programs',
+    items: [
+      { id: 'co-1', title: 'Business & Management Courses', image: 'images/ceetec_course_business_1782582707087.jpg' },
+      { id: 'co-2', title: 'Language Programs', image: 'images/ceetec_course_languages_1782582724412.jpg' },
+      { id: 'co-3', title: 'Technology & Cloud Courses', image: 'images/ceetec_course_tech_1782582693249.jpg' },
+      { id: 'co-4', title: 'Japanese Language Course', image: 'images/japanese_course_banner_1782799974067.jpg' },
+      { id: 'co-5', title: 'Linux Administration', image: 'images/linux_admin_banner_1782801937407.jpg' },
+      { id: 'co-6', title: 'M365 Specialist', image: 'images/m365_specialist_banner_1782800511070.jpg' },
+      { id: 'co-7', title: 'Solar PV Systems', image: 'images/solar_pv_banner_1782799423837.jpg' },
+    ],
   },
   {
-    id: 'g-4',
-    title: 'Academic Counseling Desk',
-    category: 'campus',
-    image: 'images/tutor_counseling_desk.jpg',
+    id: 'cloud-certifications',
+    title: 'Cloud Certifications',
+    description: 'AWS & Azure certification tracks',
+    items: [
+      { id: 'cc-1', title: 'AWS Cloud & AI', image: 'images/aws_cloud_ai_banner_1782646206591.jpg' },
+      { id: 'cc-2', title: 'AWS Security Specialty', image: 'images/aws_security_specialty_banner_1782649423803.jpg' },
+      { id: 'cc-3', title: 'AWS Solutions Architect', image: 'images/aws_solutions_architect_banner_1782646582236.jpg' },
+      { id: 'cc-4', title: 'Azure Cloud & AI', image: 'images/azure_cloud_ai_banner_1782646449494.jpg' },
+    ],
   },
   {
-    id: 'g-5',
-    title: 'Certified Exam Testing Sandbox',
-    category: 'labs',
-    image: 'images/tutor_exam_testing.jpg',
+    id: 'workshops',
+    title: 'Workshops',
+    description: 'Container & orchestration workshops',
+    items: [
+      { id: 'w-1', title: 'Container Specialist Workshop', image: 'images/container_specialist_banner_1782647403137.jpg' },
+      { id: 'w-2', title: 'Containerization & Orchestration', image: 'images/containerization_orchestration_banner_1782647052659.jpg' },
+      { id: 'w-3', title: 'DCA / KCNA / CKA Workshop', image: 'images/dca_kcna_cka_banner_1782648528926.jpg' },
+    ],
   },
   {
-    id: 'g-6',
-    title: 'Executive Boardroom',
-    category: 'campus',
-    image: 'images/tutor_boardroom.jpg',
-  },
-  {
-    id: 'g-7',
-    title: 'Business & Management Courses',
-    category: 'courses',
-    image: 'images/ceetec_course_business_1782582707087.jpg',
-  },
-  {
-    id: 'g-8',
-    title: 'Language Programs',
-    category: 'courses',
-    image: 'images/ceetec_course_languages_1782582724412.jpg',
-  },
-  {
-    id: 'g-9',
-    title: 'Technology & Cloud Courses',
-    category: 'courses',
-    image: 'images/ceetec_course_tech_1782582693249.jpg',
-  },
-  {
-    id: 'g-10',
-    title: 'Students Collaborating',
-    category: 'events',
-    image: 'images/about_students_collaborating.jpg',
-  },
-  {
-    id: 'g-11',
-    title: 'Graduation & Celebrations',
-    category: 'events',
-    image: 'images/news_celebration.jpg',
-  },
-  {
-    id: 'g-12',
-    title: 'Internship Placements',
-    category: 'events',
-    image: 'images/news_internships.jpg',
-  },
-  {
-    id: 'g-13',
-    title: 'AI Sandbox Sessions',
-    category: 'events',
-    image: 'images/news_ai_sandbox.jpg',
-  },
-  {
-    id: 'g-14',
-    title: 'Campus Overview',
-    category: 'campus',
-    image: 'images/ceetec_about_banner_1782795055106.jpg',
+    id: 'events',
+    title: 'Events & Celebrations',
+    description: 'Graduations, internships & milestones',
+    items: [
+      { id: 'e-1', title: 'AI Sandbox Sessions', image: 'images/news_ai_sandbox.jpg' },
+      { id: 'e-2', title: 'Graduation & Celebrations', image: 'images/news_celebration.jpg' },
+      { id: 'e-3', title: 'Internship Placements', image: 'images/news_internships.jpg' },
+    ],
   },
 ];
 
 export default function Gallery() {
+  const [activeAlbumId, setActiveAlbumId] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const filteredItems = GALLERY_ITEMS;
+  const activeAlbum = activeAlbumId ? ALBUMS.find((a) => a.id === activeAlbumId) ?? null : null;
+  const albumItems = activeAlbum?.items ?? [];
+  const selectedItem = selectedIndex !== null ? albumItems[selectedIndex] : null;
 
-  const selectedItem = selectedIndex !== null ? filteredItems[selectedIndex] : null;
+  const openAlbum = (id: string) => {
+    setActiveAlbumId(id);
+    setSelectedIndex(null);
+  };
+
+  const closeAlbum = () => {
+    setActiveAlbumId(null);
+    setSelectedIndex(null);
+  };
 
   const showPrev = () => {
     if (selectedIndex === null) return;
-    setSelectedIndex((selectedIndex - 1 + filteredItems.length) % filteredItems.length);
+    setSelectedIndex((selectedIndex - 1 + albumItems.length) % albumItems.length);
   };
 
   const showNext = () => {
     if (selectedIndex === null) return;
-    setSelectedIndex((selectedIndex + 1) % filteredItems.length);
+    setSelectedIndex((selectedIndex + 1) % albumItems.length);
   };
 
   return (
@@ -132,31 +139,93 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" id="gallery-grid">
-          {filteredItems.map((item, index) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedIndex(index)}
-              className="aspect-square relative overflow-hidden rounded-2xl bg-slate-100 group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
-            >
-              <SafeImage
-                src={item.image}
-                alt={item.title}
-                fallbackType="hero"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+        {!activeAlbum ? (
+          /* ALBUM BOX GRID */
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ALBUMS.map((album) => {
+              const cover = album.items[0];
+              return (
+                <div
+                  key={album.id}
+                  onClick={() => openAlbum(album.id)}
+                  className="group cursor-pointer"
+                >
+                  <div className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-slate-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <div className="absolute inset-2 rounded-xl bg-white/40 border border-white/60 rotate-2 group-hover:rotate-3 transition-transform duration-500 -z-0"></div>
+                    <div className="absolute inset-1 rounded-xl overflow-hidden -rotate-1 group-hover:-rotate-2 transition-transform duration-500">
+                      <SafeImage
+                        src={cover.image}
+                        alt={album.title}
+                        fallbackType="hero"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/15 to-transparent"></div>
+                    </div>
 
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-white/95 text-brand-blue flex items-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-semibold shadow-lg backdrop-blur-sm transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <Eye className="w-3.5 h-3.5 text-brand-orange" />
-                  <span>View</span>
+                    <div className="absolute top-4 right-4 bg-white/95 text-brand-blue flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold shadow-md backdrop-blur-sm z-10">
+                      <FolderOpen className="w-3 h-3 text-brand-orange" />
+                      {album.items.length}
+                    </div>
+
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <div className="bg-white/95 text-brand-blue flex items-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-semibold shadow-lg backdrop-blur-sm transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <Eye className="w-3.5 h-3.5 text-brand-orange" />
+                        <span>Open Album</span>
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                      <h3 className="font-display text-white text-lg font-bold leading-tight">{album.title}</h3>
+                      <p className="text-white/75 text-xs mt-1 font-light">{album.description}</p>
+                    </div>
+                  </div>
                 </div>
+              );
+            })}
+          </div>
+        ) : (
+          /* OPEN ALBUM VIEW */
+          <div>
+            <div className="flex items-center justify-between mb-8">
+              <button
+                onClick={closeAlbum}
+                className="flex items-center gap-2 text-brand-blue hover:text-brand-orange font-semibold text-sm transition-colors cursor-pointer"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Albums
+              </button>
+              <div className="text-right">
+                <h3 className="font-display text-xl font-bold text-brand-blue">{activeAlbum.title}</h3>
+                <p className="text-slate-400 text-xs">{activeAlbum.items.length} photos</p>
               </div>
             </div>
-          ))}
-        </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {albumItems.map((item, index) => (
+                <div
+                  key={item.id}
+                  onClick={() => setSelectedIndex(index)}
+                  className="aspect-square relative overflow-hidden rounded-2xl bg-slate-100 group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
+                >
+                  <SafeImage
+                    src={item.image}
+                    alt={item.title}
+                    fallbackType="hero"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/95 text-brand-blue flex items-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-semibold shadow-lg backdrop-blur-sm transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                      <Eye className="w-3.5 h-3.5 text-brand-orange" />
+                      <span>View</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
       </div>
 
@@ -170,7 +239,6 @@ export default function Gallery() {
             className="bg-white w-full max-w-3xl overflow-hidden rounded-3xl shadow-2xl relative animate-fade-in"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               onClick={() => setSelectedIndex(null)}
               className="absolute top-5 right-5 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-1.5 rounded-full transition-colors z-30 cursor-pointer"
@@ -179,8 +247,7 @@ export default function Gallery() {
               <X className="w-5 h-5" />
             </button>
 
-            {/* Prev / Next Buttons */}
-            {filteredItems.length > 1 && (
+            {albumItems.length > 1 && (
               <>
                 <button
                   onClick={showPrev}
@@ -200,7 +267,6 @@ export default function Gallery() {
             )}
 
             <div>
-              {/* Photo */}
               <div className="aspect-video relative bg-slate-100 overflow-hidden">
                 <SafeImage
                   src={selectedItem.image}
@@ -210,12 +276,15 @@ export default function Gallery() {
                 />
               </div>
 
-              {/* Info Body */}
               <div className="p-6 md:p-8">
-                <div className="flex justify-end gap-3">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-[11px] font-mono font-bold tracking-widest text-brand-orange uppercase">{activeAlbum?.title}</p>
+                    <h4 className="font-display text-brand-blue font-bold mt-1">{selectedItem.title}</h4>
+                  </div>
                   <button
                     onClick={() => setSelectedIndex(null)}
-                    className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-50 text-xs font-semibold cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-50 text-xs font-semibold cursor-pointer shrink-0"
                   >
                     Close
                   </button>
