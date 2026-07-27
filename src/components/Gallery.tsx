@@ -40,7 +40,6 @@ const ALBUMS: AlbumBox[] = [
     items: [
       { id: 'cs-1', title: 'Classroom Session', image: 'images/class1.jpeg' },
       { id: 'cs-2', title: 'Classroom Session', image: 'images/class2.jpeg' },
-      { id: 'cs-3', title: 'Classroom Session', image: 'images/class3.jpeg' },
       { id: 'cs-4', title: 'Classroom Session', image: 'images/class4.jpg' },
       { id: 'cs-5', title: 'Classroom Session', image: 'images/class5.jpg' },
       { id: 'cs-6', title: 'Classroom Session', image: 'images/class6.jpg' },
