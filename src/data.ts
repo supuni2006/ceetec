@@ -1,55 +1,4 @@
-import { Course, Tutor, Testimonial, FAQ, Feature, NewsItem } from './types';
-
-export const FEATURES: Feature[] = [
-  {
-    id: 'feat1',
-    title: 'Global Certification Mastery',
-    description: 'Lead the way in IT, Cloud Computing, AI, and Automation with world-class training.',
-    iconName: 'Award'
-  },
-  {
-    id: 'feat2',
-    title: 'Nationally Recognized',
-    description: 'We deliver TVEC-registered programs, including NVQ Levels 4 and 5.',
-    iconName: 'ShieldCheck'
-  },
-  {
-    id: 'feat3',
-    title: 'Direct Career Pathways',
-    description: 'Benefit from our industry MOUs that bridge the gap to internships and full-time roles.',
-    iconName: 'Briefcase'
-  },
-  {
-    id: 'feat4',
-    title: 'Modern Learning Labs',
-    description: 'Access state-of-the-art software sandboxes and mock exam rooms.',
-    iconName: 'Laptop'
-  },
-  {
-    id: 'feat5',
-    title: 'Flexible Access',
-    description: 'Stay on track with live lectures and a cloud portal for recorded sessions.',
-    iconName: 'Video'
-  },
-  {
-    id: 'feat6',
-    title: 'Elite Faculty',
-    description: 'Learn from a panel of specialists with deep industry expertise.',
-    iconName: 'GraduationCap'
-  },
-  {
-    id: 'feat7',
-    title: 'Hands-on Experience',
-    description: 'Gain practical skills in our smart classrooms and advanced virtual facilities.',
-    iconName: 'BookOpen'
-  },
-  {
-    id: 'feat8',
-    title: 'Trilingual Excellence',
-    description: 'Professional training available in English, Sinhala, and Tamil.',
-    iconName: 'Languages'
-  }
-];
+import { Course } from "./types";
 
 export const COURSES: Course[] = [
   {
@@ -367,234 +316,31 @@ export const COURSES: Course[] = [
       'Social Media Campaign Planning & Analytics',
       'Capstone: Launching an AI-Assisted Marketing Campaign'
     ]
-  }
-];
-
-export const TUTORS: Tutor[] = [
+  },
   {
-    id: 't-2',
-    name: 'Dr. Asela Perera',
-    role: 'Senior AI & Cloud Specialist',
-    image: '',
-    bio: 'Renowned consultant with a PhD in computer science. Active researcher and architect in cloud technologies and AI pipelines.',
+    id: 'drone-1',
+    title: 'Drone Piloting & Aerial Media Course',
+    category: 'technology',
+    categoryLabel: 'Drone Technology',
+    price: '',
     rating: 4.8,
-    coursesCount: 2,
-    studentsCount: 840,
-    socials: {
-      linkedin: 'https://linkedin.com',
-      twitter: 'https://twitter.com'
-    }
-  },
-  {
-    id: 't-3',
-    name: 'Mr. Roshan de Silva',
-    role: 'Business Consultant & Coach',
-    image: '',
-    bio: 'A highly sought-after startup mentor and business scaling specialist. Has coached over 50 businesses to expand into international markets.',
-    rating: 4.7,
-    coursesCount: 4,
-    studentsCount: 1650,
-    socials: {
-      linkedin: 'https://linkedin.com',
-      facebook: 'https://facebook.com'
-    }
-  },
-  {
-    id: 't-4',
-    name: 'Ms. Sarah Jenkins',
-    role: 'Senior IELTS Trainer',
-    image: '',
-    bio: 'An educator with 12+ years of experience in ESL and IELTS examining. Known for personalized speaking and writing coaching techniques.',
-    rating: 4.9,
-    coursesCount: 2,
-    studentsCount: 2300,
-    socials: {
-      linkedin: 'https://linkedin.com',
-      twitter: 'https://twitter.com'
-    }
-  },
-  {
-    id: 't-5',
-    name: 'Ms. Ranmali Silva',
-    role: 'Lead UX Designer',
-    image: '',
-    bio: 'Experienced UX strategist specializing in user journeys, visual hierarchy, and interactive prototypes for leading enterprise platforms.',
-    rating: 4.8,
-    coursesCount: 1,
-    studentsCount: 320,
-    socials: {
-      linkedin: 'https://linkedin.com'
-    }
-  }
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 'test4',
-    name: 'Dayan Malalgodapitiya',
-    role: 'M365 Professional',
-    feedback: 'I recently attended Microsoft ( M365) training session with Kumaran. It was highly informative and included practical examples. I would highly recommend it.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'Microsoft 365 Enterprise Training'
-  },
-  {
-    id: 'test5',
-    name: 'Anushka Madushan',
-    role: 'IT Systems Specialist',
-    feedback: 'One of a best training we had, highly recommended Sir Mr Kumaran for MS365 and all the related MS courses ( all well as any IT related) ... Thank you very much....',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'Microsoft 365 and Systems Administration'
-  },
-  {
-    id: 'test6',
-    name: 'Fazil Rahman',
-    role: 'Certified Azure Administrator',
-    feedback: 'I recently completed the Microsoft Azure A104 administrator exam. I just wanted to pass on some formal feedback of my tutor, Mr. Kumaran. He was absolutely fantastic throughout the entire length of my study- prompt to reply to my questions, and always with detailed answers to help me further my understanding of the course work. His feedback was insightful and encouraged me to push further in my attempts as well. I just want to thank him for all the time and effort he has put into helping me to achieve this certification.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'Microsoft Azure Administrator (AZ-104)'
-  },
-  {
-    id: 'test7',
-    name: 'Chaminda Somathilaka',
-    role: 'AWS Solutions Architect',
-    feedback: 'I prepared for my AWS Solutions Architect - Associate exam by taking the training program. It really helped me to get into the AWS waters as a newbie and got through the exam in quick time. Trainer did a fantastic job by guiding us o each of the subject matter specifically targeting the exam.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Solutions Architect - Associate (SAA-C03)'
-  },
-  {
-    id: 'test8',
-    name: 'Harshana Hettiarachchi',
-    role: 'AWS Certified Associate',
-    feedback: 'I could complete my AWS-SAA certificate training and passed my exam few days ago. Much appreciated your help Mr.Kumaran and wishing bright future to you and your institute.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Solutions Architect - Associate (SAA-C03)'
-  },
-  {
-    id: 'test9',
-    name: 'Chaminda Karunarathne',
-    role: 'Certified AWS Solutions Architect',
-    feedback: 'A Well organized learning culture for certifications. I recently earned AWS Solutions Architect certification by attending classes. I specially thank Mr. Kumaran for his teaching and guidance.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Solutions Architect - Associate Certification Prep'
-  },
-  {
-    id: 'test10',
-    name: 'Varuna Rajapaksha',
-    role: 'AWS Certified Instructor',
-    feedback: 'A great place for your AWS and RedHat studies. Highly recommended. Well qualified lectures panel and friendly staff. Specially thanks to Kumaran. It was indeed a great pleasure working with you as an AWS certified Instructor. You earned my highest recommendation. You are a brilliant AWS certified Instructor, and your technical background is very impressive. Great instructor, highly recommended. Any student would be lucky to have you as the best Instructor in AWS technologies.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS & RedHat Advanced Infrastructure Studies'
-  },
-  {
-    id: 'test11',
-    name: 'Anuradha Nanayakkara',
-    role: 'AWS Certified Specialist',
-    feedback: 'If you want to Certified in AWS , This is the right place to come - studying here is full of fun, warm atmosphere and super friendly and helpful staff, Kumaran is a one of the best teachers i ever met.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Certified Solutions Architect Training'
-  },
-  {
-    id: 'test12',
-    name: 'Yohan Perera',
-    role: 'Cloud Systems Engineer',
-    feedback: 'I got through the AWS certification, win it is a good place for class .Big Thanks must goes to Kumaran sir. Thank you and Wish you the best future. 🤜🤜🤜',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Cloud Certification Program'
-  },
-  {
-    id: 'test13',
-    name: 'Sifar Ahamed',
-    role: 'Cloud Solutions Engineer',
-    feedback: 'I am saying whole heartedly this is the best place available Sri Lanka. Lecturing Skills of Kumaran Sir is excellent. Nicely prepared course materials and excellent guidance for the exam.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Certified Cloud practitioner & Associate Prep'
-  },
-  {
-    id: 'test14',
-    name: 'Zaharan Safwan',
-    role: 'Senior AWS Specialist',
-    feedback: 'The instructor was excellent. He was extremely knowledgeable, willing to help any student at anytime, with any questions. Instructor has a passion for his students to succeed in and beyond the classroom. He is extremely knowledgeable and was an outstanding instructor for AWS.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Certified Solutions Architect Course'
-  },
-  {
-    id: 'test15',
-    name: 'Gayan Lalantha',
-    role: 'AWS Certified Administrator',
-    feedback: 'Really good place to learn AWS certifications. The lecturer is really good and the learning patterns are very understandable. I recommend this place for your AWS studies.',
-    rating: 5,
-    avatar: '',
-    courseTaken: 'AWS Cloud Computing Masterclass'
-  }
-];
-
-export const FAQS: FAQ[] = [
-  {
-    id: 'faq1',
-    question: 'Are ceetec courses conducted online or in-person?',
-    answer: 'We offer hybrid learning! All programs feature state-of-the-art classroom labs at our central campus as well as high-definition live streams and recorded portal access for remote students.',
-    category: 'General'
-  },
-  {
-    id: 'faq2',
-    question: 'Are there payment plans or installment options available?',
-    answer: 'Yes! We offer flexible installment plans for all our masterclasses. You can pay in 2 to 3 interest-free installments, or make use of partner bank credit card offers.',
-    category: 'Admission'
-  },
-  {
-    id: 'faq3',
-    question: 'Are the course certificates globally recognized?',
-    answer: 'Absolutely. ceetec is a registered, certified university, and our curriculums align with official global bodies. Many of our tech paths directly prepare you for Microsoft, AWS, and Cisco certifications.',
-    category: 'General'
-  },
-  {
-    id: 'faq4',
-    question: 'Do you offer placement support after course completion?',
-    answer: 'Yes, we have a dedicated Corporate Relations division that helps students compile professional portfolios, reviews CVs, and invites top recruiters for private recruitment drives at our center.',
-    category: 'Career'
-  }
-];
-
-export const NEWS: NewsItem[] = [
-  {
-    id: 'news1',
-    title: 'Ceetec Partners with Global Tech Consortium for Advanced Internships',
-    date: 'June 18, 2026',
-    category: 'Partnership',
-    commentsCount: 14,
-    image: 'images/news_internships.jpg',
-    summary: 'ceetec has signed an official MOU with leading multinational software giants to offer guaranteed fast-track internship placements for our top full-stack graduates.',
-    author: 'Admin'
-  },
-  {
-    id: 'news2',
-    title: 'Unveiling the New AI & Machine Learning Specialized Lab Facility',
-    date: 'May 28, 2026',
-    category: 'Infrastructure',
-    commentsCount: 8,
-    image: 'images/news_ai_sandbox.jpg',
-    summary: 'Our training campus has added a brand-new Artificial Intelligence sandbox laboratory equipped with industry-leading GPU processing nodes for neural network training.',
-    author: 'Facilities Team'
-  },
-  {
-    id: 'news3',
-    title: 'IELTS Success Gala: Celebrating 150+ Students with 7.5+ Bands',
-    date: 'May 04, 2026',
-    category: 'Celebration',
-    commentsCount: 22,
-    image: 'images/news_celebration.jpg',
-    summary: 'ceetec hosted an award ceremony honoring our exceptional batch of professional and academic English scholars who smashed their international test targets.',
-    author: 'Languages Dept'
+    reviewCount: 0,
+    image: 'images/drone_course_banner.jpg',
+    tutor: {
+      name: 'CEETEC Aerial Systems Faculty',
+      avatar: '',
+      role: 'Drone Operations & Aerial Media Specialist'
+    },
+    durationHours: 24,
+    durationWeeks: 3,
+    level: 'Beginner',
+    description: 'Learn to fly, capture, and create with drones — from fundamentals to real-world aerial photography, mapping, and survey applications. No prior experience needed. Open to students, professionals, content creators, farmers, and entrepreneurs.',
+    curriculum: [
+      'Drone Basics — fundamentals of drones and how they work',
+      'Practical Flying Training — hands-on training with real drones',
+      'Aerial Photo & Video Capturing — techniques for stunning aerial shots',
+      'Mapping & Surveying — learn mapping, 3D modeling & analysis',
+      'Safety & Regulations — understand drone laws, safety & best practices'
+    ]
   }
 ];

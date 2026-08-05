@@ -20,12 +20,13 @@ export default function Courses({ onOpenEnquiry }: CoursesProps) {
   const [enrollSuccess, setEnrollSuccess] = useState(false);
 
   const categories = [
-    { id: 'all', label: 'All Fields' },
-    { id: 'technology', label: 'Technology' },
-    { id: 'business', label: 'Business' },
-    { id: 'languages', label: 'Languages' },
-    { id: 'design', label: 'Design' }
-  ];
+  { id: 'all', label: 'All Fields' },
+  { id: 'technology', label: 'Technology' },
+  { id: 'business', label: 'Business' },
+  { id: 'languages', label: 'Languages' },
+  { id: 'design', label: 'Design' },
+  { id: 'drone', label: 'Drone' }, // NEW
+];
 
   const levels = [
     { id: 'all', label: 'All Levels' },
