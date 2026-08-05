@@ -71,10 +71,10 @@ const ALBUMS: AlbumBox[] = [
     title: 'Cloud Certifications',
     description: 'AWS & Azure certification tracks',
     items: [
+      { id: 'cc-4', title: 'Azure Cloud & AI', image: 'images/azure_cloud_ai_banner_1782646449494.jpg' },
       { id: 'cc-1', title: 'AWS Cloud & AI', image: 'images/aws_cloud_ai_banner_1782646206591.jpg' },
       { id: 'cc-2', title: 'AWS Security Specialty', image: 'images/aws_security_specialty_banner_1782649423803.jpg' },
       { id: 'cc-3', title: 'AWS Solutions Architect', image: 'images/aws_solutions_architect_banner_1782646582236.jpg' },
-      { id: 'cc-4', title: 'Azure Cloud & AI', image: 'images/azure_cloud_ai_banner_1782646449494.jpg' },
     ],
   },
   {
@@ -82,9 +82,8 @@ const ALBUMS: AlbumBox[] = [
     title: 'Workshops & Seminars',
     description: 'Hands-on workshops and guest seminars',
     items: [
-      { id: 'w-1', title: 'Container Specialist Workshop', image: 'images/container_specialist_banner_1782647403137.jpg' },
-      { id: 'w-2', title: 'AWS Workshop', image: 'images/class1.jpg' },
-      { id: 'w-3', title: 'AWS Workshop', image: 'images/class2.jpg' },
+      { id: 'w-1', title: 'AWS Workshop', image: 'images/class4.jpg' },
+      { id: 'w-2', title: 'AWS Workshop', image: 'images/class5.jpg' },
       { id: 'w-4', title: 'Solar Technology Workshop', image: 'images/seminar1.jpg' },
       { id: 'w-5', title: 'Solar Technology Workshop', image: 'images/seminar2.jpg' },
       { id: 'w-6', title: 'Solar Technology Workshop', image: 'images/seminar3.jpg' },

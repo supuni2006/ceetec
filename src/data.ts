@@ -76,8 +76,8 @@ export const COURSES: Course[] = [
       avatar: '',
       role: 'Native Japanese Specialist & JLPT Coach'
     },
-    durationHours: 60,
-    durationWeeks: 12,
+    durationHours: 40,
+    durationWeeks: 8,
     level: 'Beginner',
     description: "Begin your journey toward studying in Japan with CEETEC's comprehensive Japanese Language Course. Designed for beginners, our 3-month Foundation Program equips students with essential Japanese language skills, including Hiragana, Katakana, basic Kanji, grammar, vocabulary, speaking, listening, reading, and writing. The course also includes JLPT N5/N4 foundation preparation to build a strong language base.",
     curriculum: [
