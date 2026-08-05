@@ -57,6 +57,8 @@ const ALBUMS: AlbumBox[] = [
       { id: 'co-5', title: 'Linux Administration', image: 'images/linux_admin_banner_1782801937407.jpg' },
       { id: 'co-6', title: 'M365 Specialist', image: 'images/m365_specialist_banner_1782800511070.jpg' },
       { id: 'co-7', title: 'Solar PV Systems', image: 'images/solar_pv_banner_1782799423837.jpg' },
+      { id: 'co-8', title: 'Drone Course', image: 'images/solar_pv_banner_1782799423837.jpg' },
+
     ],
   },
   {
