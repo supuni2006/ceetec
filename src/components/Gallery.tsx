@@ -50,14 +50,19 @@ const ALBUMS: AlbumBox[] = [
     title: 'Courses',
     description: 'Business, tech & language programs',
     items: [
-      { id: 'co-1', title: 'Business & Management Courses', image: 'images/ceetec_course_business_1782582707087.jpg' },
-      { id: 'co-2', title: 'Language Programs', image: 'images/ceetec_course_languages_1782582724412.jpg' },
-      { id: 'co-3', title: 'Technology & Cloud Courses', image: 'images/ceetec_course_tech_1782582693249.jpg' },
-      { id: 'co-4', title: 'Japanese Language Course', image: 'images/japanese_course_banner_1782799974067.jpg' },
-      { id: 'co-5', title: 'Linux Administration', image: 'images/linux_admin_banner_1782801937407.jpg' },
-      { id: 'co-6', title: 'M365 Specialist', image: 'images/m365_specialist_banner_1782800511070.jpg' },
+      { id: 'co-1', title: 'Business & Management Courses', image: 'images/aws_cloud_ai_banner_1782646206591.jpg' },
+      { id: 'co-2', title: 'Language Programs', image: 'images/azure_cloud_ai_banner_1782646449494.jpg' },
+      { id: 'co-3', title: 'Technology & Cloud Courses', image: 'images/japanese_course_banner_1782799974067.jpg' },
+      { id: 'co-4', title: 'Japanese Language Course', image: 'images/aws_solutions_architect_banner_1782646582236.jpg' },
+      { id: 'co-5', title: 'Linux Administration', image: 'images/dca_kcna_cka_banner_1782648528926.jpg' },
+      { id: 'co-6', title: 'M365 Specialist', image: 'images/aws_security_specialty_banner_1782649423803.jpg' },
       { id: 'co-7', title: 'Solar PV Systems', image: 'images/solar_pv_banner_1782799423837.jpg' },
-      { id: 'co-8', title: 'Drone Course', image: 'images/drone.jpg' },
+      { id: 'co-8', title: 'Drone Course', image: 'images/m365_specialist_banner_1782800511070.jpg' },
+      { id: 'co-9', title: 'Drone Course', image: 'images/linux_admin_banner_1782801937407.jpg' },
+      { id: 'co-10', title: 'Drone Course', image: 'images/digital.jpg' },
+      { id: 'co-11', title: 'Drone Course', image: 'images/drone.jpg' },
+
+
 
     ],
   },
