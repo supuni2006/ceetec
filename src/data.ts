@@ -302,8 +302,8 @@ export const COURSES: Course[] = [
       avatar: '',
       role: 'Digital Marketing & Brand Strategist'
     },
-    durationHours: 40,
-    durationWeeks: 8,
+    durationHours: 20,
+    durationWeeks: 4,
     level: 'All Levels',
     description: 'Learn. Create. Grow — with AI-powered skills. Master the future of digital marketing by combining core marketing strategy with hands-on AI tools for content, video, and design, so you can plan, produce, and publish scroll-stopping campaigns faster and smarter.',
     curriculum: [
@@ -405,7 +405,7 @@ export const COURSES: Course[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test4',
-    name: 'Dayan Malalgodapitiya',
+    name: 'Mr. kumaran',
     role: 'M365 Professional',
     feedback: 'I recently attended Microsoft ( M365) training session with Kumaran. It was highly informative and included practical examples. I would highly recommend it.',
     rating: 5,
@@ -414,7 +414,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test5',
-    name: 'Anushka Madushan',
+    name: 'Mr. Kumaran',
     role: 'IT Systems Specialist',
     feedback: 'One of a best training we had, highly recommended Sir Mr Kumaran for MS365 and all the related MS courses ( all well as any IT related) ... Thank you very much....',
     rating: 5,
@@ -423,7 +423,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test6',
-    name: 'Fazil Rahman',
+    name: 'Mr. kumaran',
     role: 'Certified Azure Administrator',
     feedback: 'I recently completed the Microsoft Azure A104 administrator exam. I just wanted to pass on some formal feedback of my tutor, Mr. Kumaran. He was absolutely fantastic throughout the entire length of my study- prompt to reply to my questions, and always with detailed answers to help me further my understanding of the course work. His feedback was insightful and encouraged me to push further in my attempts as well. I just want to thank him for all the time and effort he has put into helping me to achieve this certification.',
     rating: 5,
@@ -432,7 +432,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test7',
-    name: 'Chaminda Somathilaka',
+    name: 'Mr. kumaran',
     role: 'AWS Solutions Architect',
     feedback: 'I prepared for my AWS Solutions Architect - Associate exam by taking the training program. It really helped me to get into the AWS waters as a newbie and got through the exam in quick time. Trainer did a fantastic job by guiding us o each of the subject matter specifically targeting the exam.',
     rating: 5,
@@ -441,7 +441,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test8',
-    name: 'Harshana Hettiarachchi',
+    name: 'Mr. kumaran',
     role: 'AWS Certified Associate',
     feedback: 'I could complete my AWS-SAA certificate training and passed my exam few days ago. Much appreciated your help Mr.Kumaran and wishing bright future to you and your institute.',
     rating: 5,
@@ -450,7 +450,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test9',
-    name: 'Chaminda Karunarathne',
+    name: 'Mr. kumaran',
     role: 'Certified AWS Solutions Architect',
     feedback: 'A Well organized learning culture for certifications. I recently earned AWS Solutions Architect certification by attending classes. I specially thank Mr. Kumaran for his teaching and guidance.',
     rating: 5,
@@ -459,7 +459,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test10',
-    name: 'Varuna Rajapaksha',
+    name: 'Mr. kumaran',
     role: 'AWS Certified Instructor',
     feedback: 'A great place for your AWS and RedHat studies. Highly recommended. Well qualified lectures panel and friendly staff. Specially thanks to Kumaran. It was indeed a great pleasure working with you as an AWS certified Instructor. You earned my highest recommendation. You are a brilliant AWS certified Instructor, and your technical background is very impressive. Great instructor, highly recommended. Any student would be lucky to have you as the best Instructor in AWS technologies.',
     rating: 5,
@@ -468,7 +468,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test11',
-    name: 'Anuradha Nanayakkara',
+    name: 'Mr. kumaran',
     role: 'AWS Certified Specialist',
     feedback: 'If you want to Certified in AWS , This is the right place to come - studying here is full of fun, warm atmosphere and super friendly and helpful staff, Kumaran is a one of the best teachers i ever met.',
     rating: 5,
@@ -477,7 +477,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test12',
-    name: 'Yohan Perera',
+    name: 'Mr. kumaran',
     role: 'Cloud Systems Engineer',
     feedback: 'I got through the AWS certification, win it is a good place for class .Big Thanks must goes to Kumaran sir. Thank you and Wish you the best future. 🤜🤜🤜',
     rating: 5,
@@ -486,7 +486,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test13',
-    name: 'Sifar Ahamed',
+    name: 'Mr. kumaran',
     role: 'Cloud Solutions Engineer',
     feedback: 'I am saying whole heartedly this is the best place available Sri Lanka. Lecturing Skills of Kumaran Sir is excellent. Nicely prepared course materials and excellent guidance for the exam.',
     rating: 5,
@@ -495,7 +495,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test14',
-    name: 'Zaharan Safwan',
+    name: 'Mr. kumaran',
     role: 'Senior AWS Specialist',
     feedback: 'The instructor was excellent. He was extremely knowledgeable, willing to help any student at anytime, with any questions. Instructor has a passion for his students to succeed in and beyond the classroom. He is extremely knowledgeable and was an outstanding instructor for AWS.',
     rating: 5,
@@ -504,7 +504,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 'test15',
-    name: 'Gayan Lalantha',
+    name: 'Mr. kumaran',
     role: 'AWS Certified Administrator',
     feedback: 'Really good place to learn AWS certifications. The lecturer is really good and the learning patterns are very understandable. I recommend this place for your AWS studies.',
     rating: 5,
