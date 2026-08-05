@@ -21,11 +21,12 @@ const ALBUMS: AlbumBox[] = [
     title: 'Campus & Labs',
     description: 'Lecture halls, lounges & sandbox labs',
     items: [
-      { id: 'cl-1', title: 'Executive Lecture Hall', image: 'images/class9.jpg' },
+      { id: 'cl-1', title: 'Executive Lecture Hall', image: 'images/class20.jpg' },
       { id: 'cl-2', title: 'Executive Boardroom', image: 'images/class10.jpg' },
-      { id: 'cl-3', title: 'CEETEC University', image: 'images/class11.jpg' },
+      { id: 'cl-3', title: 'CEETEC University', image: 'images/class18.jpg' },
       { id: 'cl-4', title: 'Students Collaborating', image: 'images/class6.jpg' },
-      { id: 'cl-5', title: 'Digital Campus Life', image: 'images/class3.jpg' },
+      { id: 'cl-5', title: 'Digital Campus Life', image: 'images/class12.jpg' },
+      { id: 'cl-6', title: 'Practical Lab', image: 'images/class19.jpg' },
     ],
   },
   {
@@ -78,7 +79,7 @@ const ALBUMS: AlbumBox[] = [
       { id: 'w-4', title: 'Solar Technology Workshop', image: 'images/seminar1.jpg' },
       { id: 'w-5', title: 'Solar Technology Workshop', image: 'images/seminar2.jpg' },
       { id: 'w-6', title: 'Solar Technology Workshop', image: 'images/seminar3.jpg' },
-      { id: 'w-7', title: 'Solar PV Systems', image: 'images/class3.jpg' },
+      { id: 'w-7', title: 'Solar PV Systems', image: 'images/class13.jpg' },
     ],
   },
   {
