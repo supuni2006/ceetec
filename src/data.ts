@@ -46,8 +46,8 @@ export const COURSES: Course[] = [
       avatar: '',
       role: 'AI Researcher & Consultant'
     },
-    durationHours: 48,
-    durationWeeks: 8,
+    durationHours: 36,
+    durationWeeks: 6,
     level: 'Beginner',
     description: 'Master the Foundations of Cloud & AI This dual-certification track provides a powerful entry point into the Microsoft ecosystem, blending essential cloud infrastructure with the future of intelligence.',
     curriculum: [
