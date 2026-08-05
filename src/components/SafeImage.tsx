@@ -143,6 +143,14 @@ export default function SafeImage({ src, alt, fallbackType, className = '', ...p
             <line x1="40" y1="100" x2="360" y2="100" />
             <line x1="40" y1="150" x2="360" y2="150" />
             <line x1="40" y1="200" x2="360" y2="200" />
+            <line x1="40" y1="250" x2="360" y2="250" />
+            <line x1="40" y1="50" x2="40" y2="250" />
+            <line x1="90" y1="50" x2="90" y2="250" />
+            <line x1="140" y1="50" x2="140" y2="250" />
+            <line x1="190" y1="50" x2="190" y2="250" />
+            <line x1="240" y1="50" x2="240" y2="250" />
+            <line x1="290" y1="50" x2="290" y2="250" />
+            <line x1="340" y1="50" x2="340" y2="250" />
           </g>
 
           {/* Isometric bento chart columns */}
