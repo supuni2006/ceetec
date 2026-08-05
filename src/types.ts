@@ -1,10 +1,10 @@
 export interface Course {
   id: string;
   title: string;
-  category: 'technology' | 'business' | 'languages' | 'design';
+  category: 'technology' | 'business' | 'languages' | 'design' | 'drone';
   categoryLabel: string;
   /** Optional extra categories this course should also match under (in addition to `category`). */
-  categories?: Array<'technology' | 'business' | 'languages' | 'design'>;
+  categories?: Array<'technology' | 'business' | 'languages' | 'design' | 'drone'>;
   price: number | string;
   rating: number;
   reviewCount: number;

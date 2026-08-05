@@ -328,7 +328,7 @@ export const COURSES: Course[] = [
   {
     id: 'drone-1',
     title: 'Drone Piloting & Aerial Media Course',
-    category: 'technology',
+    category: 'drone',
     categoryLabel: 'Drone Technology',
     price: '',
     rating: 4.8,
