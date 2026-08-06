@@ -190,7 +190,7 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
 
       {/* Mobile Drawer */}
       <div
-        id="mobile-drawer"n
+        id="mobile-drawer"
         className={`fixed inset-0 bg-brand-blue/50 backdrop-blur-sm z-50 transition-opacity duration-300 lg:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
