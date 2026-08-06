@@ -154,8 +154,8 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
           ))}
         </div>
 
-        {/* CTA Button (Desktop) */}
-        <div className="hidden lg:flex items-center" id="nav-cta-container">
+        {/* CTA Buttons (Desktop) */}
+        <div className="hidden lg:flex items-center gap-3" id="nav-cta-container">
           <button
             onClick={onOpenEnquiry}
             id="nav-enquiry-btn"
@@ -164,6 +164,17 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
             <span>Quick Enquiry</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </button>
+          
+          <a
+            href="https://ceeteclead.vercel.app/#/"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="nav-crm-btn"
+            className="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center gap-1.5 group cursor-pointer tracking-wide"
+          >
+            <span>CRM</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
 
         {/* Hamburger Menu (Mobile) */}
@@ -179,7 +190,7 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
 
       {/* Mobile Drawer */}
       <div
-        id="mobile-drawer"
+        id="mobile-drawer"n
         className={`fixed inset-0 bg-brand-blue/50 backdrop-blur-sm z-50 transition-opacity duration-300 lg:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
@@ -232,14 +243,24 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
             </div>
           </div>
 
-          <div className="border-t border-slate-100 pt-6">
-                <button
-      onClick={onOpenEnquiry}
-      className="bg-brand-blue hover:bg-brand-orange text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm flex items-center gap-2"
-    >
-      Quick Enquiry
-            </button>
-            <div className="mt-4 text-center text-xs text-gray-400 font-mono">
+    <div className="border-t border-slate-100 pt-6 flex flex-col gap-3">
+      <button
+        onClick={onOpenEnquiry}
+        className="bg-brand-blue hover:bg-brand-orange text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm flex items-center justify-center gap-2"
+      >
+        Quick Enquiry
+      </button>
+      
+      <a
+        href="https://ceeteclead.vercel.app/#/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 tracking-wide"
+      >
+        CRM
+        <ArrowRight className="w-3.5 h-3.5" />
+      </a>
+            <div className="mt-1 text-center text-xs text-gray-400 font-mono">
               info@ceetec.lk
             </div>
           </div>
