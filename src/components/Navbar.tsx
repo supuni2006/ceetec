@@ -175,6 +175,17 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
             <span>CRM</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </a>
+
+          <a
+            href="https://spec-site-shk.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="nav-portal-btn"
+            className="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center gap-1.5 group cursor-pointer tracking-wide"
+          >
+            <span>Portal</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
 
         {/* Hamburger Menu (Mobile) */}
@@ -258,6 +269,16 @@ export default function Navbar({ onOpenEnquiry, activeSection }: NavbarProps) {
         className="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 tracking-wide"
       >
         CRM
+        <ArrowRight className="w-3.5 h-3.5" />
+      </a>
+
+      <a
+        href="https://spec-site-shk.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 tracking-wide"
+      >
+        Portal
         <ArrowRight className="w-3.5 h-3.5" />
       </a>
             <div className="mt-1 text-center text-xs text-gray-400 font-mono">
