@@ -97,7 +97,9 @@ const ALBUMS: AlbumBox[] = [
     items: [
       { id: 'e-1', title: 'AI Sandbox Sessions', image: 'images/award01.jpg' },
       { id: 'e-2', title: 'Graduation & Celebrations', image: 'images/award02.jpg' },
-      { id: 'e-3', title: 'Internship Placements', image: 'images/news_internships.jpg' },
+      { id: 'e-3', title: 'Internship Placements', image: 'images/event1.jpg' },
+      { id: 'e-4', title: 'Internship Placements', image: 'images/event2.jpg' },
+
     ],
   },
 ];
