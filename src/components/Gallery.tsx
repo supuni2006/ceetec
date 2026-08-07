@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Images, Eye, X, ChevronRight, ChevronLeft, ArrowLeft, FolderOpen } from 'lucide-react';
-import SafeImage from './SafeImage';
+import SafeImage, { getAssetPath } from './SafeImage';
 
 interface GalleryItem {
   id: string;
@@ -132,6 +132,21 @@ export default function Gallery() {
     setSelectedIndex((selectedIndex + 1) % albumItems.length);
   };
 
+  // Keyboard support for the lightbox: Escape closes, arrows navigate
+  useEffect(() => {
+    if (selectedIndex === null) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedIndex(null);
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedIndex, albumItems.length]);
+
   return (
     <section id="gallery" className="py-24 bg-white relative z-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -244,64 +259,80 @@ export default function Gallery() {
       {/* LIGHTBOX */}
       {selectedItem && (
         <div
-          className="fixed inset-0 bg-brand-blue/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center animate-fade-in"
           onClick={() => setSelectedIndex(null)}
         >
+          {/* Blurred, zoomed backdrop made from the same photo so there's never awkward cropping */}
           <div
-            className="bg-white w-full max-w-3xl overflow-hidden rounded-3xl shadow-2xl relative animate-fade-in"
+            className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-60"
+            style={{ backgroundImage: `url(${getAssetPath(selectedItem.image)})` }}
+          />
+          <div className="absolute inset-0 bg-brand-blue/80" />
+
+          {/* Close button — pinned to the screen, not the image card */}
+          <button
+            onClick={() => setSelectedIndex(null)}
+            className="absolute top-5 right-5 md:top-8 md:right-8 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-2 rounded-full transition-colors z-30 cursor-pointer"
+            aria-label="Close"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          {albumItems.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  showPrev();
+                }}
+                className="absolute top-1/2 -translate-y-1/2 left-3 md:left-8 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-2 md:p-3 rounded-full transition-colors z-30 cursor-pointer"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  showNext();
+                }}
+                className="absolute top-1/2 -translate-y-1/2 right-3 md:right-8 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-2 md:p-3 rounded-full transition-colors z-30 cursor-pointer"
+                aria-label="Next"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </>
+          )}
+
+          {/* Foreground card: full photo shown with object-contain so nothing gets cropped */}
+          <div
+            className="relative z-10 w-full max-w-5xl mx-4 md:mx-16 flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-5 right-5 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-1.5 rounded-full transition-colors z-30 cursor-pointer"
-              aria-label="Close"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="relative w-full max-h-[70vh] rounded-2xl overflow-hidden shadow-2xl bg-black/20 flex items-center justify-center">
+              <SafeImage
+                src={selectedItem.image}
+                alt={selectedItem.title}
+                fallbackType="hero"
+                className="max-w-full max-h-[70vh] w-auto h-auto object-contain"
+              />
+            </div>
 
-            {albumItems.length > 1 && (
-              <>
-                <button
-                  onClick={showPrev}
-                  className="absolute top-1/2 -translate-y-1/2 left-4 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-1.5 rounded-full transition-colors z-30 cursor-pointer"
-                  aria-label="Previous"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={showNext}
-                  className="absolute top-1/2 -translate-y-1/2 right-4 text-white/95 hover:text-white bg-black/40 hover:bg-brand-orange p-1.5 rounded-full transition-colors z-30 cursor-pointer"
-                  aria-label="Next"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </>
-            )}
-
-            <div>
-              <div className="aspect-video relative bg-slate-100 overflow-hidden">
-                <SafeImage
-                  src={selectedItem.image}
-                  alt={selectedItem.title}
-                  fallbackType="hero"
-                  className="w-full h-full object-cover"
-                />
+            <div className="w-full mt-4 bg-white rounded-2xl shadow-xl px-6 py-4 flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-mono font-bold tracking-widest text-brand-orange uppercase">{activeAlbum?.title}</p>
+                <h4 className="font-display text-brand-blue font-bold mt-1">{selectedItem.title}</h4>
+                {albumItems.length > 1 && (
+                  <p className="text-slate-400 text-xs mt-1">
+                    {(selectedIndex ?? 0) + 1} / {albumItems.length}
+                  </p>
+                )}
               </div>
-
-              <div className="p-6 md:p-8">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <p className="text-[11px] font-mono font-bold tracking-widest text-brand-orange uppercase">{activeAlbum?.title}</p>
-                    <h4 className="font-display text-brand-blue font-bold mt-1">{selectedItem.title}</h4>
-                  </div>
-                  <button
-                    onClick={() => setSelectedIndex(null)}
-                    className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-50 text-xs font-semibold cursor-pointer shrink-0"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
+              <button
+                onClick={() => setSelectedIndex(null)}
+                className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-50 text-xs font-semibold cursor-pointer shrink-0"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
