@@ -95,8 +95,8 @@ const ALBUMS: AlbumBox[] = [
     title: 'Events & Celebrations',
     description: 'Graduations, internships & milestones',
     items: [
-      { id: 'e-1', title: 'AI Sandbox Sessions', image: 'images/news_ai_sandbox.jpg' },
-      { id: 'e-2', title: 'Graduation & Celebrations', image: 'images/news_celebration.jpg' },
+      { id: 'e-1', title: 'AI Sandbox Sessions', image: 'images/award01.jpg' },
+      { id: 'e-2', title: 'Graduation & Celebrations', image: 'images/award02.jpg' },
       { id: 'e-3', title: 'Internship Placements', image: 'images/news_internships.jpg' },
     ],
   },
